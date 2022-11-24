@@ -17,7 +17,7 @@
     }
 
     onMount(getItems)
-</script>r
+</script>
 
 <div>
     <Search/>
