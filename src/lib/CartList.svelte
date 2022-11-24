@@ -7,9 +7,13 @@
     const _limit = 7
 
     let getItems = async (start = 0, limit = _limit) => {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/photos?_start=${start}&_limit=${limit}`)
-        const data = await response.json()
-        items = [...items, ...data]
+        try{
+            const response = await fetch(`https://jsonplaceholder.typicode.com/photos?_start=${start}&_limit=${limit}`)
+            const data = await response.json()
+            items = [...items, ...data]
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     onMount(getItems)
